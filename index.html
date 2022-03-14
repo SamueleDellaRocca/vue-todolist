@@ -20,12 +20,10 @@
         </div>
 
         <ul class="todolist">
-            <li>
-                <div class="testo-barrato">fare i compiti</div><button id="btn">x</button>
+            <li v-for="element in arrayTodo">
+                <div :class="(element.done == true) ? 'testo-barrato' : ''">{{ element.text }}</div><button
+                    id="btn">x</button>
             </li>
-            <li>pulire la casa</li>
-            <li>scrivere codice</li>
-            <li>portare a spasso il cane</li>
         </ul>
 
     </div>
