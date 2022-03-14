@@ -51,9 +51,18 @@ const app = new Vue({
         },
 
         funzioneAddTodo() {
-            this.arrayTodo.unshift(this.newTodo);
+            if (this.newTodo.text.trim() != '') {
+                this.arrayTodo.unshift({ ...this.newTodo });
+            }
         },
 
+        funzioneDone(index) {
+            if (this.arrayTodo[index].done) {
+                this.arrayTodo[index].done = false;
+            } else {
+                this.arrayTodo[index].done = true;
+            }
+        }
     }
 
 

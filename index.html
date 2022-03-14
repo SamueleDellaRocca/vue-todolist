@@ -15,13 +15,15 @@
     <div id="container">
 
         <div class="upside">
-            <input v-model="newTodo.text" type="text" name="new-todo" id="new-todo" placeholder="Nuovo Todo">
+            <input v-on:keyup.enter="funzioneAddTodo" v-model="newTodo.text" type="text" name="new-todo" id="new-todo"
+                placeholder="Nuovo Todo">
             <button @click="funzioneAddTodo" id="aggiungi">Aggiungi</button>
         </div>
 
         <ul class="todolist">
             <li v-for="(element, index) in arrayTodo">
-                <div :class="(element.done == true) ? 'testo-barrato' : ''">{{ element.text }}</div>
+                <div @click="funzioneDone(index)" :class="(element.done == true) ? 'testo-barrato' : ''">{{ element.text
+                    }}</div>
                 <button id="btn" @click="funzioneDelete(index)">x</button>
             </li>
         </ul>
