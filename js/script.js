@@ -36,10 +36,15 @@ const app = new Vue({
                 done: false,
             },
 
-
-
         ],
+    },
 
+    methods: {
+
+        funzioneDelete(index) {
+
+            this.arrayTodo.splice(index, 1);
+        },
 
     }
 

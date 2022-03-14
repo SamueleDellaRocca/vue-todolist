@@ -20,9 +20,9 @@
         </div>
 
         <ul class="todolist">
-            <li v-for="element in arrayTodo">
-                <div :class="(element.done == true) ? 'testo-barrato' : ''">{{ element.text }}</div><button
-                    id="btn">x</button>
+            <li v-for="(element, index) in arrayTodo">
+                <div :class="(element.done == true) ? 'testo-barrato' : ''">{{ element.text }}</div>
+                <button id="btn" @click="funzioneDelete(index)">x</button>
             </li>
         </ul>
 
