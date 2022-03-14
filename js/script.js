@@ -4,6 +4,11 @@ const app = new Vue({
 
     data: {
 
+        newTodo: {
+            text: '',
+            done: false,
+        },
+
         arrayTodo: [
 
             {
@@ -42,8 +47,11 @@ const app = new Vue({
     methods: {
 
         funzioneDelete(index) {
-
             this.arrayTodo.splice(index, 1);
+        },
+
+        funzioneAddTodo() {
+            this.arrayTodo.unshift(this.newTodo);
         },
 
     }

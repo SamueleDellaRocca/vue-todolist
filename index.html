@@ -15,8 +15,8 @@
     <div id="container">
 
         <div class="upside">
-            <input type="text" name="new-todo" id="new-todo" placeholder="Nuovo Todo">
-            <button id="aggiungi">Aggiungi</button>
+            <input v-model="newTodo.text" type="text" name="new-todo" id="new-todo" placeholder="Nuovo Todo">
+            <button @click="funzioneAddTodo" id="aggiungi">Aggiungi</button>
         </div>
 
         <ul class="todolist">
