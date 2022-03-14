@@ -53,6 +53,7 @@ const app = new Vue({
         funzioneAddTodo() {
             if (this.newTodo.text.trim() != '') {
                 this.arrayTodo.unshift({ ...this.newTodo });
+                this.newTodo.text = '';
             }
         },
 
